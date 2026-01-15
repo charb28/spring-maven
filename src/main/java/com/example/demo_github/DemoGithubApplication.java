@@ -2,6 +2,9 @@ package com.example.demo_github;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping; // Ajout
+import org.springframework.web.bind.annotation.RestController; // Ajout
+
 
 @SpringBootApplication
 public class DemoGithubApplication {
@@ -10,4 +13,14 @@ public class DemoGithubApplication {
 		SpringApplication.run(DemoGithubApplication.class, args);
 	}
 
+}
+
+
+// Ajout du contrôleur ci-dessous
+@RestController
+class HelloWorldController {
+    @GetMapping("/")
+    public String sayHello() {
+        return "Hello, World!";
+    }
 }
